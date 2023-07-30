@@ -1,6 +1,6 @@
 <template>
   <article 
-    class="relative flex items-start space-x-6 p-6 max-w-[400px] hover:shadow-lg transition bg-gray-800 rounded-md
+    class="relative flex items-start space-x-6 p-6 max-w-[370px] md:max-w-[400px] w-full hover:shadow-lg transition bg-gray-800 rounded-md
       group
       min-h-[160px]
     "

@@ -83,7 +83,7 @@ export default defineComponent({
   </h1>
   </div>
     <ul
-      class='flex flex-wrap md:gap-3 items-start justify-center'
+      class='flex flex-wrap gap-2 md:gap-3 items-start justify-center'
     >
       <MovieItem 
         v-for="movie in movies" 

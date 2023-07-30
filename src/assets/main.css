@@ -15,7 +15,8 @@ body {
   @apply p-4;
   @apply shadow-md;
   @apply rounded-md;
-  @apply flex;
+  @apply hidden;
+  @apply md:flex;
   @apply flex-col;
   @apply items-center;
   @apply mt-2;
