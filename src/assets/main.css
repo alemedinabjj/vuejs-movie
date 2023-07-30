@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-900;
+  @apply text-white;
+}
+
+.sidebar {
+
+  @apply top-2;
+  @apply z-10;
+  @apply bg-gray-800;
+  @apply p-4;
+  @apply shadow-md;
+  @apply rounded-md;
+  @apply flex;
+  @apply flex-col;
+  @apply items-center;
+  @apply mt-2;
+  @apply h-[500px];
+  @apply w-[400px];
+}
+
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-700;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-500;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 0px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb:active {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb:window-inactive {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb:horizontal {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb:vertical {
+  background: transparent;
+}
+
+
