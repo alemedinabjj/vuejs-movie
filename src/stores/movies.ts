@@ -1,24 +1,23 @@
-import {  defineStore } from 'pinia';
-import tmdbService from '@/services/tmdbService';
+import { defineStore } from 'pinia'
+import tmdbService from '@/services/tmdbService'
 
- interface Movie {
-  id: number;
-  title: string;
+interface Movie {
+  id: number
+  title: string
 }
-
 
 export const useMoviesStore = defineStore('movies', {
   state: () => ({
-    movies: [] as Movie[],
+    movies: [] as Movie[]
   }),
 
   actions: {
     async fetchMovies() {
       try {
-        const response = await tmdbService.get('movie/popular');
-        this.movies = response.data.results;
+        const response = await tmdbService.get('movie/popular')
+        this.movies = response.data.results
       } catch (error) {
-        console.error('Error fetching movies:', error);
+        console.error('Error fetching movies:', error)
       }
     },
 
@@ -27,31 +26,36 @@ export const useMoviesStore = defineStore('movies', {
         const response = await tmdbService.get('trending/all/week', {
           params: {
             language: 'pt-BR',
-            page: page,
-          },
-        });
-        this.movies = response.data.results;
+            page: page
+          }
+        })
+        this.movies = response.data.results
       } catch (error) {
-        console.error('Error fetching movies:', error);
+        console.error('Error fetching movies:', error)
       }
     },
 
     async fetchMovieById(id: number) {
       try {
-        const response = await tmdbService.get(`movie/${id}`);
-        this.movies = response.data.results;
-      }
-      catch (error) {
-        console.error('Error fetching movies:', error);
+        const response = await tmdbService.get(`movie/${id}`)
+        this.movies = response.data.results
+      } catch (error) {
+        console.error('Error fetching movies:', error)
       }
     },
 
-    //getCast imagem
-
-
-      //https://image.tmdb.org/t/p/w500/6Wdl9N6dL0Hi0T1qJLWSz6gMLbd.jpg
-
-  },
-
-  
-});
+    async fetchMovieBySearch(query: string) {
+      try {
+        const response = await tmdbService.get(`search/movie`, {
+          params: {
+            query: query
+          }
+        })
+        this.movies = response.data.results
+        console.log(this.movies)
+      } catch (error) {
+        console.error('Error fetching movies:', error)
+      }
+    }
+  }
+})

@@ -8,20 +8,18 @@ interface Movie {
 }
 
 export default defineComponent({
-  setup(props) {
-    const favoritesStore = useFavoritesStore();
-
-    const isFavorite = (movie: Movie) => {
-      return favoritesStore.favorites.some((favMovie: Movie) => favMovie.id === movie.id);
-    };
-
-    const movies = favoritesStore.favorites;
-
-    return {
-      isFavorite,
-      movies,
-    };
-  },
+    setup(props) {
+        const favoritesStore = useFavoritesStore();
+        const isFavorite = (movie: Movie) => {
+            return favoritesStore.favorites.some((favMovie: Movie) => favMovie.id === movie.id);
+        };
+        const movies = favoritesStore.favorites;
+        return {
+            isFavorite,
+            movies,
+        };
+    },
+  
 });
 </script>
 

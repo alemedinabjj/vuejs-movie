@@ -21,7 +21,14 @@ body {
   @apply items-center;
   @apply mt-2;
   @apply h-[500px];
-  @apply w-[400px];
+  @apply w-[300px];
+}
+
+.searchbar {
+  @apply h-20;
+  @apply flex;
+  @apply items-center;
+  @apply justify-center;
 }
 
 
